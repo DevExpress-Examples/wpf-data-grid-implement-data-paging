@@ -7,11 +7,16 @@
 <!-- default file list end -->
 # How to implement data paging
 
+Silverlight supports the data paging mechanism natively. In the meantime, there are no easy approaches to implementing the **IPagedCollectionView** interface in WPF.
 
-<p>Silverlight supports the data paging mechanism natively. In the meantime, there are no easy approaches to implementing the IPagedCollectionView interface in WPF.</p>
-<br />
-<p>The easiest way to implement data paging is to change the grid's ItemsSource when the page index is changed. This example contains special attached behavior that allows you to enable this feature with ease.<br /><br /><strong>See Also:</strong><br /><a href="https://www.devexpress.com/Support/Center/p/T226182">How to support paging in DXGrid by implementing the IPagedCollectionView interface</a></p>
+  
+We supported **Data Paging** in **v18.1** and later versions. Please refer to [Data Paging](https://docs.devexpress.com/WPF/120186/controls-and-libraries/data-grid/paging-and-scrolling/data-paging) for more information.  
+  
+The following solution is applicable to the earlier versions:  
+The easiest way to implement data paging is to change the grid's ItemsSource when the page index is changed. This example contains special attached behavior that allows you to enable this feature with ease.
 
-<br/>
+  
+**See Also:**  
+[How to support paging in DXGrid by implementing the IPagedCollectionView interface](https://www.devexpress.com/Support/Center/p/T226182.aspx)
 
 
