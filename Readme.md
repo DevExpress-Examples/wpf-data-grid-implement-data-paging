@@ -5,7 +5,7 @@
 * [MainWindow.xaml.cs](./CS/DXGridDataPager/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/DXGridDataPager/MainWindow.xaml.vb))
 * [SourcesBehavior.cs](./CS/DXGridDataPager/SourcesBehavior.cs) (VB: [SourcesBehavior.vb](./VB/DXGridDataPager/SourcesBehavior.vb))
 <!-- default file list end -->
-# How to implement data paging
+# [Obsolete] How to implement data paging
 
 Silverlight supports the data paging mechanism natively. In the meantime, there are no easy approaches to implementing the **IPagedCollectionView** interface in WPF.
 
