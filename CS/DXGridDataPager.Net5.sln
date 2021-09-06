@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2012
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DXGridDataPager", "DXGridDataPager\DXGridDataPager.vbproj", "{1D4FB519-9AF9-4633-8120-79E081C534E8}"
+# Visual Studio 16
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXGridDataPager", "DXGridDataPager\DXGridDataPager.Net5.csproj", "{1D4FB519-9AF9-4633-8120-79E081C534E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
