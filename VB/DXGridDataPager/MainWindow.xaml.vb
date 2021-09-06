@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
@@ -21,6 +20,7 @@ Namespace DXGridDataPager
 	''' </summary>
 	Partial Public Class MainWindow
 		Inherits Window
+
 		Public Sub New()
 			DataContext = New VM()
 			InitializeComponent()
@@ -28,17 +28,19 @@ Namespace DXGridDataPager
 	End Class
 	Public Class VM
 		Implements INotifyPropertyChanged
-		Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
-		Private pageIndex_Renamed As Integer = 1
+
+		Public Event PropertyChanged As PropertyChangedEventHandler
+'INSTANT VB NOTE: The field pageIndex was renamed since Visual Basic does not allow fields to have the same name as other class members:
+		Private pageIndex_Conflict As Integer = 1
 		Public Property PageIndex() As Integer
 			Get
-				Return pageIndex_Renamed
+				Return pageIndex_Conflict
 			End Get
 			Set(ByVal value As Integer)
-				If value = pageIndex_Renamed Then
+				If value = pageIndex_Conflict Then
 					Return
 				End If
-				pageIndex_Renamed = value
+				pageIndex_Conflict = value
 				OnPropertyChanged("PageIndex")
 			End Set
 		End Property
@@ -68,41 +70,26 @@ Namespace DXGridDataPager
 	End Class
 	Public Class TestDataList
 		Inherits ObservableCollection(Of TestDataItem)
+
 		Public Shared Function Create(ByVal cc As Integer) As TestDataList
 			Dim res As New TestDataList()
 			For i As Integer = 0 To 9
 				Dim item As New TestDataItem()
 				item.ID = i
-				item.Value = (ChrW(CInt(Fix(AscW("A"c))) + cc)).ToString()
+				item.Value = (ChrW(CInt(Math.Truncate(AscW("A"c))) + cc)).ToString()
 				res.Add(item)
 			Next i
 			For i As Integer = 0 To 9
 				Dim item As New TestDataItem()
 				item.ID = i
-				item.Value = (ChrW(CInt(Fix(AscW("B"c))) + cc)).ToString()
+				item.Value = (ChrW(CInt(Math.Truncate(AscW("B"c))) + cc)).ToString()
 				res.Add(item)
 			Next i
 			Return res
 		End Function
 	End Class
 	Public Class TestDataItem
-		Private privateID As Integer
 		Public Property ID() As Integer
-			Get
-				Return privateID
-			End Get
-			Set(ByVal value As Integer)
-				privateID = value
-			End Set
-		End Property
-		Private privateValue As String
 		Public Property Value() As String
-			Get
-				Return privateValue
-			End Get
-			Set(ByVal value As String)
-				privateValue = value
-			End Set
-		End Property
 	End Class
 End Namespace
