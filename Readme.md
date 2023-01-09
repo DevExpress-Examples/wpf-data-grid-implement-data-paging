@@ -5,13 +5,10 @@
 <!-- default badges end -->
 
 # WPF Data Grid - Implement Data Paging
+  
+This example displays the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl)'s content across multiple pages. The built-in pager allows users to navigate through grid data.
 
-Silverlight supports the data paging mechanism natively. In the meantime, there are no easy approaches to implementing the **IPagedCollectionView** interface in WPF.
-  
-We supported **Data Paging** in **v18.1** and later versions. Please refer to [Data Paging](https://docs.devexpress.com/WPF/120186/controls-and-libraries/data-grid/paging-and-scrolling/data-paging) for more information.  
-  
-The following solution is applicable to the earlier versions:  
-The easiest way to implement data paging is to change the grid's ItemsSource when the page index is changed. This example contains special attached behavior that allows you to enable this feature with ease.
+![image](https://user-images.githubusercontent.com/65009440/211273620-3d0683bf-02f4-40e9-aee1-28b9127b2358.png)
 
 ## Files to Review
 
@@ -24,3 +21,6 @@ The easiest way to implement data paging is to change the grid's ItemsSource whe
 * [GridViewBase.AllowPaging](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridViewBase.AllowPaging)
 
 ## More Examples
+
+* [WPF Data Grid - Bind to PagedAsyncSource](https://github.com/DevExpress-Examples/wpf-data-grid-bind-to-pagedasyncsource)
+* [Use Skip Tokens to Optimize Paging in Virtual Sources](https://github.com/DevExpress-Examples/how-to-use-skip-tokens-to-optimize-paging)
