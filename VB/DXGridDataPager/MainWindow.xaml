@@ -1,31 +1,17 @@
 <Window x:Class="DXGridDataPager.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:local="clr-namespace:DXGridDataPager"
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
-        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DXGridDataPager"
+        Title="MainWindow" Height="300" Width="500">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <dxg:GridControl ItemsSource="{Binding ElementName=DataPagerSource, Path=ActualSource}">
+        <dxg:GridControl ItemsSource="{Binding Source}" AutoGenerateColumns="AddNew">
             <dxg:GridControl.View>
-                <dxg:TableView x:Name="view"/>
+                <dxg:TableView AllowPaging="True" PageSize="10" CurrentPageIndex="2" PagerNumericButtonCount="5"/>
             </dxg:GridControl.View>
-            <dxg:GridControl.Columns>
-                <dxg:GridColumn FieldName="ID"/>
-                <dxg:GridColumn FieldName="Value"/>
-            </dxg:GridControl.Columns>
         </dxg:GridControl>
-
-        <dxe:DataPager x:Name="DataPager" Grid.Row="1" HorizontalAlignment="Left"
-                       PageIndex="{Binding PageIndex, Mode=TwoWay}" >
-            <i:Interaction.Behaviors>
-                <local:SourcesBehavior x:Name="DataPagerSource" Sources="{Binding PagedCollection}"/>
-            </i:Interaction.Behaviors>
-        </dxe:DataPager>
     </Grid>
 </Window>
